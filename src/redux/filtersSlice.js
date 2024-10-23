@@ -2,6 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   name: '',
+  type: '',
+  priceRange: { min: 0, max: 1000 },
 };
 
 const filtersSlice = createSlice({
@@ -9,10 +11,11 @@ const filtersSlice = createSlice({
   initialState,
   reducers: {
     changeFilter: (state, { payload }) => {
-      state.name = payload;
+      return { ...state, ...payload };
     },
+    resetFilters: () => initialState,
   },
 });
 
-export const { changeFilter } = filtersSlice.actions;
+export const { changeFilter, resetFilters } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;
