@@ -1,0 +1,49 @@
+.catalogContainer {
+    display: flex;
+    gap: 24px;
+    padding: 12px;
+}
+
+.catalogSidebar {
+    margin: 0 30px;
+}
+
+.catalogMain {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    align-items: center;
+    justify-content: center
+}
+
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.2rem;
+    color: #e44848;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.loadMoreButton {
+    padding: 16px 32px;
+    border-radius: 200px;
+    border: 1px solid #DADDE1;
+    cursor: pointer;
+}
+
+.loadMoreButton:hover {
+    border: 1px solid #D84343;
+}

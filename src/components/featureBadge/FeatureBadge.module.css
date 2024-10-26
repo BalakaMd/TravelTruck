@@ -1,0 +1,21 @@
+.badge {
+    display: flex;
+    padding: 12px 18px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 100px;
+    background: var(--Gray-100, #F2F4F7);
+    mix-blend-mode: multiply;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #344054;
+}

@@ -1,0 +1,41 @@
+.nav {
+    display: flex;
+    padding: 24px 64px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #F2F4F7;
+    background: #F7F7F7;
+}
+
+.logoContainer {
+    flex: 1;
+}
+
+.linksContainer {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.navLink {
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 16px;
+}
+
+.navLinkActive {
+    color: #D84343;
+}
+
+.navLinkInactive {
+    color: #101828;
+}
+
+.spacer {
+    flex: 1;
+}
