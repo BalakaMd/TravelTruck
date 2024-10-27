@@ -1,4 +1,3 @@
-/* ProductDetails.module.css */
 .container {
     display: flex;
     flex-direction: column;
@@ -81,6 +80,55 @@
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.2rem;
+    color: #e44848;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.infoSection {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.infoLink {
+    text-decoration: none;
+    color: #101828;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    position: relative;
+    padding-bottom: 24px;
+}
+
+.activeInfoLink::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #D84343;
 }
 
 @media (max-width: 768px) {

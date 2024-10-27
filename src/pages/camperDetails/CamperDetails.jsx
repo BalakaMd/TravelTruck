@@ -27,10 +27,6 @@ const CamperDetails = () => {
     fetchCamperDetails();
   }, [id]);
 
-  if (isLoading) return <div className={styles.loading}>Loading...</div>;
-  if (error) return <div className={styles.error}>Error: {error}</div>;
-  if (!camper) return <div className={styles.error}>No camper found</div>;
-
   return (
     <div>
       <Navigation />

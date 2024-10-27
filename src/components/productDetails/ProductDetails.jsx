@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Outlet, useParams, NavLink } from 'react-router-dom';
 import { campersApi } from '../../api';
 import styles from './ProductDetails.module.css';
 import { icons } from '../../assets/icons';
@@ -26,13 +26,12 @@ const ProductDetails = () => {
     fetchCamperDetails();
   }, [id]);
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-  if (!camper) return null;
+  if (isLoading) return <div className={styles.loading}>Loading...</div>;
+  if (error) return <div className={styles.error}>Error: {error}</div>;
+  if (!camper) return <div className={styles.error}>No camper found</div>;
 
   const { name, price, rating, location, description, gallery, reviews } =
     camper;
-  console.log('gallery', gallery);
   const StarIcon = reviews.length > 0 ? icons.activeStar : icons.defaultStar;
 
   return (
@@ -64,6 +63,29 @@ const ProductDetails = () => {
 
       {/* Description */}
       <p className={styles.description}>{description}</p>
+
+      {/* Info Section */}
+      <div className={styles.infoSection}>
+        <NavLink
+          to={`/catalog/${id}/features`}
+          state={{ from: location.state?.from }}
+          className={({ isActive }) =>
+            `${styles.infoLink} ${isActive ? styles.activeInfoLink : ''}`
+          }
+        >
+          Features
+        </NavLink>
+        <NavLink
+          to={`/catalog/${id}/reviews`}
+          state={{ from: location.state?.from }}
+          className={({ isActive }) =>
+            `${styles.infoLink} ${isActive ? styles.activeInfoLink : ''}`
+          }
+        >
+          Reviews
+        </NavLink>
+      </div>
+      <Outlet />
     </div>
   );
 };

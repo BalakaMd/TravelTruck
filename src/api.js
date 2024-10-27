@@ -55,4 +55,39 @@ export const campersApi = {
       throw error;
     }
   },
+
+  getCamperDetails: async id => {
+    try {
+      const response = await axios.get(`${BASE_URL}/campers/${id}`);
+      const camper = response.data;
+
+      const details = {
+        form: camper.form,
+        length: camper.length,
+        width: camper.width,
+        height: camper.height,
+        tank: camper.tank,
+        consumption: camper.consumption,
+        transmission: camper.transmission,
+        engine: camper.engine,
+      };
+
+      const features = {
+        AC: camper.AC,
+        bathroom: camper.bathroom,
+        kitchen: camper.kitchen,
+        TV: camper.TV,
+        radio: camper.radio,
+        refrigerator: camper.refrigerator,
+        microwave: camper.microwave,
+        gas: camper.gas,
+        water: camper.water,
+      };
+
+      return { details, features };
+    } catch (error) {
+      console.error(`Error fetching camper details with id ${id}:`, error);
+      throw error;
+    }
+  },
 };
