@@ -11,9 +11,13 @@ import iconAlcove from './bi_grid-3x3-gap.svg';
 import iconRadio from './ui-radios.svg';
 import iconWater from './ion_water-outline.svg';
 import Heart from '/src/assets/icons/Property 1=Default.svg';
+import RedHeart from '/src/assets/icons/Property 1=pressed.svg';
 import DefaultStar from '/src/assets/icons/Property 1=Default (1).svg';
 import ActiveStar from '/src/assets/icons/Property 1=pressed (1).svg';
 import MapIcon from '/src/assets/icons/map.svg';
+import refrigeratorIcon from '/src/assets/icons/solar_fridge-outline.svg';
+import microwaveIcon from '/src/assets/icons/lucide_microwave.svg';
+import gasIcon from '/src/assets/icons/hugeicons_gas-stove.svg';
 
 export const icons = {
   automatic: iconAutomatic,
@@ -32,4 +36,8 @@ export const icons = {
   defaultStar: DefaultStar,
   activeStar: ActiveStar,
   mapIcon: MapIcon,
+  refrigerator: refrigeratorIcon,
+  microwave: microwaveIcon,
+  gas: gasIcon,
+  RedHeart: RedHeart,
 };

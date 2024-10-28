@@ -1,5 +1,6 @@
 .featuresContainer {
-    padding: 20px;
+    padding: 44px;
+    padding-bottom: 20px;
     background-color: #f5f5f5;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -44,4 +45,44 @@
     text-align: center;
     font-size: 18px;
     padding: 20px;
+}
+
+.detailsTitle {
+    color: #101828;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 48px;
+}
+
+.detailsList {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detailRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.detailRow:last-child {
+    border-bottom: none;
+}
+
+.detailLabel {
+    color: #4b5563;
+}
+
+.detailValue {
+    font-weight: 500;
+}
+
+.detailsSection {
+    margin-top: 70px;
 }

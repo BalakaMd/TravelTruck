@@ -131,6 +131,21 @@
     background-color: #D84343;
 }
 
+.contentWrapper {
+    display: flex;
+    margin-top: 20px;
+}
+
+.outletContainer {
+    flex: 1;
+    padding-right: 10px;
+}
+
+.bookFormContainer {
+    flex: 1;
+    padding-left: 10px;
+}
+
 @media (max-width: 768px) {
     .gallery {
         display: flex;

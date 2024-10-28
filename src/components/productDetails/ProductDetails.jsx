@@ -3,6 +3,7 @@ import { Outlet, useParams, NavLink } from 'react-router-dom';
 import { campersApi } from '../../api';
 import styles from './ProductDetails.module.css';
 import { icons } from '../../assets/icons';
+import BookForm from '../bookForm/BookForm';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -85,7 +86,14 @@ const ProductDetails = () => {
           Reviews
         </NavLink>
       </div>
-      <Outlet />
+      <div className={styles.contentWrapper}>
+        <div className={styles.outletContainer}>
+          <Outlet />
+        </div>
+        <div className={styles.bookFormContainer}>
+          <BookForm />
+        </div>
+      </div>
     </div>
   );
 };

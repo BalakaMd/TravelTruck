@@ -7,7 +7,9 @@ const FeatureBadge = ({ iconName, text }) => {
       <span className={styles.icon}>
         <img src={icons[iconName]} alt={text} />
       </span>
-      <span className={styles.text}>{text}</span>
+      <span className={styles.text}>
+        {text.charAt(0).toUpperCase() + text.slice(1)}
+      </span>
     </div>
   );
 };

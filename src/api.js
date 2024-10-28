@@ -68,8 +68,6 @@ export const campersApi = {
         height: camper.height,
         tank: camper.tank,
         consumption: camper.consumption,
-        transmission: camper.transmission,
-        engine: camper.engine,
       };
 
       const features = {
@@ -87,6 +85,18 @@ export const campersApi = {
       return { details, features };
     } catch (error) {
       console.error(`Error fetching camper details with id ${id}:`, error);
+      throw error;
+    }
+  },
+
+  getCamperReviews: async id => {
+    try {
+      const response = await axios.get(`${BASE_URL}/campers/${id}`);
+      const reviews = response.data.reviews;
+
+      return reviews;
+    } catch (error) {
+      console.error(`Error fetching camper reviews with id ${id}:`, error);
       throw error;
     }
   },

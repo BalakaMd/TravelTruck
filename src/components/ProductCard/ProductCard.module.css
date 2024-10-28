@@ -1,4 +1,3 @@
-/* ProductCard.module.css */
 .card {
     display: flex;
     padding: 24px;
@@ -91,6 +90,26 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+}
+
+.favoriteButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.favoriteButton:hover {
+    transform: scale(1.1);
+}
+
+.favoriteButton img {
+    width: 24px;
+    height: 24px;
 }
 
 

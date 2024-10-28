@@ -1,68 +1,52 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Filters from '../../components/filters/Filters';
 import Navigation from '../../components/navigation/Navigation';
 import ProductList from '../../components/productList/ProductList';
 import styles from './Catalog.module.css';
-import { campersApi } from '../../api';
-import { useSelector } from 'react-redux';
+import { fetchCampers } from '../../redux/operations';
 
 function Catalog() {
+  const dispatch = useDispatch();
   const filters = useSelector(state => state.filters);
-  const [campersData, setCampersData] = useState([]);
-  const [displayedCampers, setDisplayedCampers] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const {
+    list: campersData,
+    status,
+    error,
+  } = useSelector(state => state.vehicles);
   const [displayCount, setDisplayCount] = useState(4);
 
   useEffect(() => {
-    const fetchCampers = async () => {
-      try {
-        setIsLoading(true);
-        const data = await campersApi.getAllCampers(filters);
-        setCampersData(data);
-        setIsLoading(false);
-      } catch {
-        setError('Failed to fetch campers. Please try again later.');
-        setIsLoading(false);
-      }
-    };
+    dispatch(fetchCampers(filters));
+  }, [dispatch, filters]);
 
-    fetchCampers();
-  }, [filters]);
-
-  useEffect(() => {
-    setDisplayedCampers(campersData.slice(0, displayCount));
-  }, [campersData, displayCount]);
+  const displayedCampers = campersData.slice(0, displayCount);
 
   const handleLoadMore = () => {
     setDisplayCount(prevCount => prevCount + 4);
   };
 
-  if (error) return <div className={styles.error}>Error: {error}</div>;
+  if (status === 'loading')
+    return <div className={styles.loadingContainer}>Loading...</div>;
+  if (status === 'failed')
+    return <div className={styles.error}>Error: {error}</div>;
 
   return (
     <div>
       <Navigation />
-      {isLoading ? (
-        <div className={styles.loadingContainer}>Loading...</div>
-      ) : (
-        <div className={styles.catalogContainer}>
-          <div className={styles.catalogSidebar}>
-            <Filters />
-          </div>
-          <div className={styles.catalogMain}>
-            <ProductList campers={displayedCampers} />
-            {displayCount < campersData.length && (
-              <button
-                onClick={handleLoadMore}
-                className={styles.loadMoreButton}
-              >
-                Load More
-              </button>
-            )}
-          </div>
+      <div className={styles.catalogContainer}>
+        <div className={styles.catalogSidebar}>
+          <Filters />
         </div>
-      )}
+        <div className={styles.catalogMain}>
+          <ProductList campers={displayedCampers} />
+          {displayCount < campersData.length && (
+            <button onClick={handleLoadMore} className={styles.loadMoreButton}>
+              Load More
+            </button>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,60 @@
+.container {
+    padding: 20px;
+    max-width: 800px;
+}
+
+.reviewItem {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E44848;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.content {
+    flex: 1;
+}
+
+.header {
+    margin-bottom: 8px;
+}
+
+.name {
+    color: #101828;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.stars {
+    color: #ffd700;
+    margin-bottom: 8px;
+}
+
+.text {
+    color: #4a4a4a;
+    line-height: 1.5;
+}
+
+.loading {
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    padding: 20px;
+}
