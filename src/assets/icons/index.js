@@ -13,7 +13,7 @@ import iconWater from './ion_water-outline.svg';
 import Heart from './Property1Default.svg';
 import RedHeart from './Property1Pressed1.svg';
 import DefaultStar from './Property1Default1.svg';
-import ActiveStar from './Property1pressed1.svg';
+import ActiveStar from './star.svg';
 import MapIcon from './map.svg';
 import refrigeratorIcon from './solar_fridge-outline.svg';
 import microwaveIcon from './lucide_microwave.svg';
