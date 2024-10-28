@@ -11,7 +11,7 @@ import iconAlcove from './bi_grid-3x3-gap.svg';
 import iconRadio from './ui-radios.svg';
 import iconWater from './ion_water-outline.svg';
 import Heart from './Property1=Default.svg';
-import RedHeart from './Property1=pressed.svg';
+import RedHeart from 'src/assets/icons/Property1=Pressed1.svg';
 import DefaultStar from './Property1=Default1.svg';
 import ActiveStar from './Property1=pressed1.svg';
 import MapIcon from './map.svg';
