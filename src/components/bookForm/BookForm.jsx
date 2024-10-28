@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './BookForm.module.css';
+import { toast } from 'react-hot-toast';
 
 function BookForm() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,18 @@ function BookForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
+    console.log('Form data:', formData);
+    setFormData({
+      name: '',
+      email: '',
+      bookingDate: '',
+      comment: '',
+    });
+    e.target.reset();
+    toast.success('Booking request sent successfully!', {
+      position: 'top-right',
+      autoClose: 3000,
+    });
   };
 
   const handleChange = e => {
