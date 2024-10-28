@@ -11,7 +11,6 @@ function BookForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(formData);
   };
 
   const handleChange = e => {
