@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../../assets/logo.svg';
+import logo from '/src/assets/Logo.svg';
 import styles from './Navigation.module.css';
 
 function Navigation() {
